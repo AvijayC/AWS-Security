@@ -1,0 +1,62 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListUserFolder",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::*",
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "home/957401190575/${aws:PrincipalTag/username_owner}/*",
+                        "home/957401190575/${aws:PrincipalTag/username_owner}"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "ReadWriteUserFolder",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion",
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::*/home/957401190575/${aws:PrincipalTag/username_owner}/*"
+        },
+        {
+            "Sid": "AllowTagBasedAccess",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "arn:aws:s3:::*/*",
+            "Condition": {
+                "StringEquals": {
+                    "s3:ExistingObjectTag/owner": "${aws:PrincipalTag/username_owner}"
+                }
+            }
+        },
+        {
+            "Sid": "AllowAccessFlagAObjects",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::*/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:PrincipalTag/sample_access_flag_A": "true",
+                    "s3:ExistingObjectTag/access_flag_A": "true"
+                }
+            }
+        }
+    ]
+}

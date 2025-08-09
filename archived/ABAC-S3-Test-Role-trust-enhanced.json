@@ -1,0 +1,48 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAssumeFromSSOWithUsernameMatching",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root"
+            },
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:PrincipalTag/username_owner": "${aws:username}",
+                    "sts:TransitiveTagKeys": "username_owner"
+                },
+                "StringLike": {
+                    "aws:userid": "AROA552MO2CX6L4N4T2QD:*"
+                }
+            }
+        },
+        {
+            "Sid": "AllowAssumeWithSessionTagMatching",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root"
+            },
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/username_owner": "${aws:username}"
+                },
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "username_owner",
+                        "sample_access_flag_A",
+                        "sample_access_flag_B"
+                    ]
+                }
+            }
+        }
+    ]
+}

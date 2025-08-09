@@ -1,0 +1,68 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListingOfUserFolder",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::your-bucket-name",
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "home/957401190575/${aws:PrincipalTag/username_owner}/*",
+                        "home/957401190575/${aws:PrincipalTag/username_owner}"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowUserToReadTheirOwnObjects",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion",
+                "s3:GetObjectMetadata",
+                "s3:GetObjectVersionMetadata"
+            ],
+            "Resource": "arn:aws:s3:::your-bucket-name/home/957401190575/${aws:PrincipalTag/username_owner}/*"
+        },
+        {
+            "Sid": "AllowUserToWriteTheirOwnObjects",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::your-bucket-name/home/957401190575/${aws:PrincipalTag/username_owner}/*"
+        },
+        {
+            "Sid": "DenyAccessToOtherUsersFolders",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::your-bucket-name/home/957401190575/*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "s3:prefix": [
+                        "home/957401190575/${aws:PrincipalTag/username_owner}/*",
+                        "home/957401190575/${aws:PrincipalTag/username_owner}"
+                    ]
+                }
+            }
+        }
+    ]
+}

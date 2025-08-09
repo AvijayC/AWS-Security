@@ -1,0 +1,13 @@
+ABAC Test File
+==============
+File: test-file-004.txt
+Owner: aalsg-user-1
+Generated: Sat Aug  2 13:43:35 PDT 2025
+
+This is a test file for ABAC (Attribute-Based Access Control) testing.
+The file's S3 tags will determine who can access it based on:
+- sample_access_flag_A: Controls access based on flag A
+- vpce_access_flag: Controls access through VPC endpoints
+- username_owner: Identifies the owner of this file
+
+Test content for security validation.

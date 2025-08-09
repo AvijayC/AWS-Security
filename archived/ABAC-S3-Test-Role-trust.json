@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAccountAndEC2Access",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root",
+                "Service": "ec2.amazonaws.com"
+            },
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ]
+        },
+        {
+            "Sid": "AllowSAMLAccess",
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::957401190575:saml-provider/IdentityCenter"
+            },
+            "Action": [
+                "sts:AssumeRoleWithSAML",
+                "sts:TagSession"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "SAML:aud": "https://signin.aws.amazon.com/saml"
+                }
+            }
+        }
+    ]
+}

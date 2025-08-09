@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAssumeWithExternalIdValidation",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root"
+            },
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "sts:ExternalId": "${aws:RequestTag/username_owner}-secret-key",
+                    "sts:TransitiveTagKeys": [
+                        "username_owner",
+                        "sample_access_flag_A"
+                    ]
+                }
+            }
+        }
+    ]
+}

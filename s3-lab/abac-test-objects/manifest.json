@@ -1,0 +1,150 @@
+{
+  "description": "ABAC test object collection manifest for S3 bucket testing",
+  "generated": "2025-08-02",
+  "objects": [
+    {
+      "local_path": "home/957401190575/aalsg-user-1/test-file-001.txt",
+      "s3_key": "home/957401190575/aalsg-user-1/test-file-001.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsg-user-1"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-1/test-file-002.txt",
+      "s3_key": "home/957401190575/aalsg-user-1/test-file-002.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsg-user-1"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-1/test-file-003.txt",
+      "s3_key": "home/957401190575/aalsg-user-1/test-file-003.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsg-user-1"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-1/test-file-004.txt",
+      "s3_key": "home/957401190575/aalsg-user-1/test-file-004.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsg-user-1"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-2/test-file-005.txt",
+      "s3_key": "home/957401190575/aalsg-user-2/test-file-005.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsg-user-2"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-2/test-file-006.txt",
+      "s3_key": "home/957401190575/aalsg-user-2/test-file-006.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsg-user-2"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-2/test-file-007.txt",
+      "s3_key": "home/957401190575/aalsg-user-2/test-file-007.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsg-user-2"
+      }
+    },
+    {
+      "local_path": "home/957401190575/aalsg-user-2/test-file-008.txt",
+      "s3_key": "home/957401190575/aalsg-user-2/test-file-008.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsg-user-2"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-1/test-file-009.txt",
+      "s3_key": "home/455095160360/aalsb-user-1/test-file-009.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsb-user-1"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-1/test-file-010.txt",
+      "s3_key": "home/455095160360/aalsb-user-1/test-file-010.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsb-user-1"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-1/test-file-011.txt",
+      "s3_key": "home/455095160360/aalsb-user-1/test-file-011.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsb-user-1"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-1/test-file-012.txt",
+      "s3_key": "home/455095160360/aalsb-user-1/test-file-012.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsb-user-1"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-2/test-file-013.txt",
+      "s3_key": "home/455095160360/aalsb-user-2/test-file-013.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsb-user-2"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-2/test-file-014.txt",
+      "s3_key": "home/455095160360/aalsb-user-2/test-file-014.txt",
+      "tags": {
+        "sample_access_flag_A": "true",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsb-user-2"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-2/test-file-015.txt",
+      "s3_key": "home/455095160360/aalsb-user-2/test-file-015.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "true",
+        "username_owner": "aalsb-user-2"
+      }
+    },
+    {
+      "local_path": "home/455095160360/aalsb-user-2/test-file-016.txt",
+      "s3_key": "home/455095160360/aalsb-user-2/test-file-016.txt",
+      "tags": {
+        "sample_access_flag_A": "false",
+        "vpce_access_flag": "false",
+        "username_owner": "aalsb-user-2"
+      }
+    }
+  ]
+}

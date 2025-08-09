@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAssumeFromSSOWithUserIdValidation",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root"
+            },
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "aws:userid": "AROA552MO2CX6L4N4T2QD:${aws:RequestTag/username_owner}"
+                },
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "username_owner",
+                        "sample_access_flag_A",
+                        "sample_access_flag_B"
+                    ]
+                }
+            }
+        }
+    ]
+}

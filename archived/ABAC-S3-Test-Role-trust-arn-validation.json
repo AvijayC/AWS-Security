@@ -1,0 +1,34 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAssumeWithFullArnValidation",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root"
+            },
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:sts::957401190575:assumed-role/${aws:RequestTag/sso_role_name}/${aws:RequestTag/username_owner}"
+                    ]
+                },
+                "StringEquals": {
+                    "aws:RequestTag/sso_role_name": "AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+                },
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "username_owner",
+                        "sso_role_name",
+                        "sample_access_flag_A",
+                        "sample_access_flag_B"
+                    ]
+                }
+            }
+        }
+    ]
+}

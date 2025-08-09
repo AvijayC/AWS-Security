@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Allow",
+            "Action": [
+                "sts:AssumeRole",
+                "sts:TagSession"
+            ],
+            "Resource": [
+                "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+            ]
+        }
+    ]
+}

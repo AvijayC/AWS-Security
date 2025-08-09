@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AdminFullAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AdministratorAccess_d1bcf7d0d45a5f6a"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::your-bucket-name",
+        "arn:aws:s3:::your-bucket-name/*"
+      ]
+    },
+    {
+      "Sid": "ABACListUserFolder",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+      },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::your-bucket-name",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "home/957401190575/${aws:PrincipalTag/username_owner}/*",
+            "home/957401190575/${aws:PrincipalTag/username_owner}"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "ABACReadUserObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/home/957401190575/${aws:PrincipalTag/username_owner}/*"
+    },
+    {
+      "Sid": "ABACReadTaggedObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:role/ABAC-S3-Test-Role"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::your-bucket-name/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:ExistingObjectTag/username_owner": "${aws:PrincipalTag/username_owner}"
+        }
+      }
+    }
+  ]
+}
