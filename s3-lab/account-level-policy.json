@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowAccountLevelAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:root"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::avijay-account-level-bucket-1755931757",
+        "arn:aws:s3:::avijay-account-level-bucket-1755931757/*"
+      ]
+    }
+  ]
+}

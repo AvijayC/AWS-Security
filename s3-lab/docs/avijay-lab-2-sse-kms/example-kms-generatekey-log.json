@@ -1,0 +1,49 @@
+{
+    "eventVersion": "1.11",
+    "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "REDACTED_PRINCIPAL_ID",
+        "arn": "arn:aws:iam::957401190575:user/iamadmin",
+        "accountId": "957401190575",
+        "accessKeyId": "REDACTED_ACCESS_KEY",
+        "userName": "iamadmin",
+        "sessionContext": {
+            "attributes": {
+                "creationDate": "2025-08-12T00:31:48Z",
+                "mfaAuthenticated": "false"
+            }
+        },
+        "invokedBy": "AWS Internal"
+    },
+    "eventTime": "2025-08-12T00:31:48Z",
+    "eventSource": "kms.amazonaws.com",
+    "eventName": "GenerateDataKey",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "AWS Internal",
+    "userAgent": "AWS Internal",
+    "requestParameters": {
+        "keySpec": "AES_256",
+        "keyId": "arn:aws:kms:us-east-1:957401190575:key/REDACTED_KEY_ID",
+        "encryptionContext": {
+            "aws:s3:arn": "arn:aws:s3:::avijay-lab-2-sse-kms/example_object_1.txt"
+        }
+    },
+    "responseElements": null,
+    "additionalEventData": {
+        "keyMaterialId": "REDACTED_KEY_MATERIAL_ID"
+    },
+    "requestID": "REDACTED_REQUEST_ID",
+    "eventID": "REDACTED_EVENT_ID",
+    "readOnly": true,
+    "resources": [
+        {
+            "accountId": "957401190575",
+            "type": "AWS::KMS::Key",
+            "ARN": "arn:aws:kms:us-east-1:957401190575:key/REDACTED_KEY_ID"
+        }
+    ],
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "957401190575",
+    "eventCategory": "Management"
+}

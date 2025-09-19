@@ -1,0 +1,11 @@
+{
+    "yaml.schemas": {
+        "/Users/avijaychakravorti/.vscode/extensions/continue.continue-1.0.19-darwin-arm64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ],
+        "https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": [
+            "file:///Users/avijaychakravorti/Desktop/Learning/AWS-Security/cloudformation/basic-vpc-and-ec2-setup.yaml",
+            "file:///Users/avijaychakravorti/Desktop/Learning/AWS-Security/cloudformation/basic-vpc-and-ec2-setup-cidr.yaml"
+        ]
+    }
+}

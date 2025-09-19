@@ -1,0 +1,425 @@
+INTRODUCTION & SCENARIO
+ 
+ Public Introduction (6:00 )
+ 
+ Scenario - Animals4life (13:28 )
+ 
+ Connect with other students and your instructor (3:10 )
+ 
+ COURSE UPGRADES - SAVE $ WHEN ADDING MORE COURSES
+ 
+ SHARED LESSONS [SHAREDALL] [ASSOCIATESHARED] etc...
+ 
+ 🚨 READ ME 🚨 - ENABLE EMAIL UPDATES (IT'S WORTH IT)
+Course Fundamentals and AWS Accounts
+ 
+ AWS Accounts - The Basics (11:33 )
+ 
+ [DEMO] ACCOUNTS - STEP1 - Creating GENERAL AWS Account (14:44 )
+ 
+ Multi-factor Authentication (MFA) (8:25 )
+ 
+ [DEMO] ACCOUNTS - STEP2 - Securing GENERAL AWS Account (9:44 )
+ 
+ [DEMO] ACCOUNTS - STEP3 - Creating a Budget (6:46 )
+ 
+ [DOITYOURSELF] Creating the Production Account (4:59 )
+ 
+ Identity and Access Management (IAM) Basics (13:01 )
+ 
+ [DEMO] ACCOUNTS - STEP4 - Adding IAMADMIN to GENERAL Account (12:36 )
+ 
+ [DEMO] ACCOUNTS - STEP4 - Adding IAMADMIN to PRODUCTION Account (10:17 )
+ 
+ IAM Access Keys (7:10 )
+ 
+ [DEMO] Creating Access keys and setting up AWS CLI v2 tools (17:43 )
+Networking and Technical Fundamentals (moved to dedicated course)
+ 
+ TECH FUNDAMENTALS CONTENT (!!PLEASE READ ME!!)
+Domain 6: Management and Security Governance [SCS-C02]
+ 
+ AWS Organizations (12:56 )
+ 
+ [SHAREDALL] [DEMO] AWS Organizations (19:48 )
+ 
+ Service Control Policies (SCP) (12:43 )
+ 
+ [SHAREDALL] [DEMO] Using Service Control Policies (16:45 )
+ 
+ AWS Control Tower (15:42 )
+ 
+ AWS Config (6:13 )
+ 
+ AWS Service Catalog (7:07 )
+ 
+ AWS Resource Access Manager (RAM) (14:43 )
+ 
+ Trusted Advisor (8:54 )
+ 
+ CloudFormation Physical & Logical Resources (7:30 )
+ 
+ CloudFormation Template and Pseudo Parameters (6:53 )
+ 
+ CloudFormation Intrinsic Functions (14:28 )
+ 
+ CloudFormation Mappings (4:30 )
+ 
+ CloudFormation Outputs (3:37 )
+ 
+ CloudFormation Conditions (7:24 )
+ 
+ CloudFormation DependsOn (7:14 )
+ 
+ CloudFormation Wait Conditions & cfn-signal (11:52 )
+ 
+ CloudFormation Nested Stacks (13:55 )
+ 
+ CloudFormation Cross-Stack References (10:05 )
+ 
+ CloudFormation Deletion Policy (5:24 )
+ 
+ CloudFormation Stack Roles (6:47 )
+ 
+ CloudFormation ChangeSets (11:03 )
+ 
+ CloudFormation Custom Resources (11:03 )
+Domain 4: Identity and Access Management
+ 
+ [ASSOCIATESHARED] IAM Identity Policies (15:51 )
+ 
+ [ASSOCIATESHARED] IAM Users and ARNs (13:49 )
+ 
+ [ASSOCIATESHARED] IAM Groups (7:48 )
+ 
+ [ASSOCIATESHARED] IAM Roles - The Tech (8:13 )
+ 
+ [ASSOCIATESHARED] When to use IAM Roles (15:27 )
+ 
+ Service-linked Roles and PassRole (5:16 )
+ 
+ Security Token Service (STS) (6:53 )
+ 
+ [ASSOCIATESHARED] EC2 Instance Roles & Profile (4:18 )
+ 
+ IAM Policy Variables (4:58 )
+ 
+ Policy Interpretation Deep Dive - Example 1 (10:23 )
+ 
+ Policy Interpretation Deep Dive - Example 2 (9:11 )
+ 
+ Policy Interpretation Deep Dive - Example 3 (10:59 )
+ 
+ AWS Permissions Evaluation (10:25 )
+ 
+ IAM Permissions Boundaries and Delegation (17:28 )
+ 
+ External ID … confused deputy (9:07 )
+ 
+ Directory Service Deep Dive (Microsoft AD) (10:11 )
+ 
+ Directory Service Deep Dive (AD Connector) (7:37 )
+ 
+ What is ID Federation? (6:08 )
+ 
+ Amazon Cognito - User and Identity Pools (14:44 )
+ 
+ [MINIPROJECT] Implementing Web Identity Federation (WEBIDF) - PART1 (14:56 )
+ 
+ [MINIPROJECT] Implementing Web Identity Federation (WEBIDF) - PART2 (14:32 )
+ 
+ [MINIPROJECT] Implementing Web Identity Federation (WEBIDF) - PART3 (16:32 )
+ 
+ [MINIPROJECT] Implementing Web Identity Federation (WEBIDF) - PART4 (24:20 )
+ 
+ [MINIPROJECT] Implementing Web Identity Federation (WEBIDF) - PART5 (5:02 )
+ 
+ SAML Federation (this is the old way of doing things, but you need to know the architecture) (12:21 )
+ 
+ IAM Identity Center (formally AWS SSO) (9:32 )
+ 
+ [DEMO] Adding Single Sign-on to the Animals4life ORG - PART1 (14:53 )
+ 
+ [DEMO] Adding Single Sign-on to the Animals4life ORG - PART2 (12:23 )
+ 
+ [ASSOCIATESHARED] S3 PreSigned URLs (11:11 )
+ 
+ [SHAREDALL] [DEMO] Creating and using PresignedURLs (18:23 )
+ 
+ [ASSOCIATESHARED] S3 Security (Resource Policies & ACLs) (18:19 )
+ 
+ S3 Object Lock (9:52 )
+ 
+ S3 Versioning & MFA (7:41 )
+ 
+ [DEMO] Cross Account Access to S3 - SETUP - STAGE1 (4:29 )
+ 
+ [DEMO] Cross Account Access to S3 - ACL - STAGE2 (9:39 )
+ 
+ [DEMO] Cross Account Access to S3 - BUCKET POLICY - STAGE3 (9:38 )
+ 
+ [DEMO] Cross Account Access to S3 - ROLE - STAGE4 (8:17 )
+ 
+ EC2 Instance Metadata (15:46 )
+Domain 1: Threat Detection and Incident Response
+ 
+ AWS Abuse Notice, UAP & Penetration Testing (7:18 )
+ 
+ AWS Guardduty 101 (4:14 )
+ 
+ AWS Security Hub (5:02 )
+ 
+ Amazon Detective (3:12 )
+ 
+ Revoking IAM Role Temporary Security Credentials (9:23 )
+ 
+ [DEMO] Revoking Temporary Credentials - PART1 (12:12 )
+ 
+ [DEMO] Revoking Temporary Credentials - PART2 (10:20 )
+Domain 3: Infrastructure Security
+ 
+ Public and Private AWS Services (7:04 )
+ 
+ [SHAREDALL] Custom VPCs - PART1 - THEORY (10:10 )
+ 
+ [SHAREDALL] [DEMO] Custom VPCs - PART2 - DEMO [UPDATED20231129] (5:40 )
+ 
+ [ASSOCIATESHARED] VPC Subnets (10:42 )
+ 
+ [SHAREDALL] [DEMO] Implement multi-tier VPC subnets [UPDATED20231129] (15:03 )
+ 
+ DHCP in a VPC (7:02 )
+ 
+ VPC Router Deep Dive (13:21 )
+ 
+ Stateful vs Stateless firewalls (14:04 )
+ 
+ Network Access Control lists (NACL) (12:38 )
+ 
+ Security Groups (SG) (11:48 )
+ 
+ Internet Gateway (IGW) Ipv4 and IPv6 (15:52 )
+ 
+ Egress Only Internet gateway (6:46 )
+ 
+ Bastion Hosts & Authentication (6:16 )
+ 
+ [ASSOCIATESHARED] [DEMO] Configuring A4L public subnets and Jumpbox - PART1 [UPDATED20231119] (13:45 )
+ 
+ [ASSOCIATESHARED] [DEMO] Configuring A4L public subnets and Jumpbox - PART2 [UPDATED20231119] (11:35 )
+ 
+ Port Forwarding (3:33 )
+ 
+ Nat Instance (9:41 )
+ 
+ Nat Gateway (15:24 )
+ 
+ [ASSOCIATESHARED] [DEMO] Implementing private internet access using NAT Gateways (19:25 )
+ 
+ IP Sec VPN Fundamentals (14:54 )
+ 
+ Virtual Private Gateway Deep Dive (VGW) (8:04 )
+ 
+ AWS Site-to-Site VPN (18:05 )
+ 
+ [DEMO] Simple Site2Site VPN - STAGE0 - SETUP (4:52 )
+ 
+ [DEMO] Simple Site2Site VPN - STAGE1 - AWS VPN (10:01 )
+ 
+ [DEMO] Simple Site2Site VPN - STAGE2 - onprep pfSense Config (17:09 )
+ 
+ [DEMO] Simple Site2Site VPN - STAGE3 - Routing & Security (10:29 )
+ 
+ [DEMO] Simple Site2Site VPN - STAGE4 - Testing (5:42 )
+ 
+ [DEMO] Simple Site2Site VPN - STAGE5 - Cleanup (1:50 )
+ 
+ Client VPN (6:31 )
+ 
+ Gateway VPC Endpoints (11:14 )
+ 
+ Interface VPC Endpoints (11:25 )
+ 
+ [SHAREDALL] [DEMO] VPC Endpoints - Interface - PART1 (11:59 )
+ 
+ [SHAREDALL] [DEMO] VPC Endpoints - Gateway - PART2 (9:59 )
+ 
+ [SHAREDALL] [DEMO] Egress-Only Internet Gateway - PART3 (7:57 )
+ 
+ Endpoint Policies (12:11 )
+ 
+ [DEMO] Private S3 Buckets - PART1 - SETUP (8:15 )
+ 
+ [DEMO] Private S3 Buckets - PART2 (17:02 )
+ 
+ Advanced VPC DNS & DNS Endpoints (15:01 )
+ 
+ VPC Peering (9:04 )
+ 
+ [DEMO] VPC Peering (22:38 )
+ 
+ EBS Encryption Architecture (8:22 )
+ 
+ [ASSOCIATESHARED] [DEMO] EBS Volumes - PART1 (15:16 )
+ 
+ [ASSOCIATESHARED] [DEMO] EBS Volumes - PART2 (14:13 )
+ 
+ [ASSOCIATESHARED] [DEMO] EBS Volumes - PART3 (14:27 )
+ 
+ EBS Volume Secure wipes (4:12 )
+ 
+ S3 Access Points (5:52 )
+ 
+ CloudFront - Architecture (14:56 )
+ 
+ AWS Certificate Manager (ACM) (11:21 )
+ 
+ CloudFront - SSL/TLS & SNI (14:59 )
+ 
+ CloudFront - Security - OAI/OAC & Custom Origins (8:50 )
+ 
+ CloudFront - Georestrictions (9:40 )
+ 
+ CloudFront - Private Behaviours, Signed URL & Cookies (7:49 )
+ 
+ CloudFront - Field Level Encryption (9:00 )
+ 
+ Lambda@edge (8:03 )
+ 
+ DDOS 101 (14:38 )
+ 
+ AWS Shield (9:47 )
+ 
+ AWS Network Firewall - 101 (14:18 )
+ 
+ Implementing DNSSEC using Route53 (17:43 )
+Domain 2: Security Logging and Monitoring [SCS-C02]
+ 
+ Cloudwatch 101 - PART1 (9:44 )
+ 
+ Cloudwatch 101 - PART2 (9:19 )
+ 
+ CloudWatch Logs Architecture (13:44 )
+ 
+ CloudWatch Events and EventBridge (6:54 )
+ 
+ S3 Events (4:32 )
+ 
+ [DEMO] S3 Events + Lambda (Pixelator) - PART1 (18:03 )
+ 
+ [DEMO] S3 Events + Lambda (Pixelator) - PART2 (17:43 )
+ 
+ SNS Architecture (7:49 )
+ 
+ Amazon Inspector (6:28 )
+ 
+ AWS Trusted Advisor (8:54 )
+ 
+ VPC Flow Logs (9:56 )
+ 
+ Application Layer (7) Firewalls (7:44 )
+ 
+ Web Application Firewall (WAF), WEBACLs, Rule Groups and Rules (19:18 )
+ 
+ [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART1 (11:51 )
+ 
+ [ASSOCIATESHARED] [DEMO] Logging and Metrics with CloudWatch Agent-PART2 (8:08 )
+ 
+ CloudTrail Architecture (11:40 )
+ 
+ [SHAREDALL] [DEMO] Implementing an Organizational Trail (18:23 )
+ 
+ CloudTrail log file integrity validation (6:28 )
+ 
+ AWS Athena 101 (8:19 )
+ 
+ [DEMO] Athena Demo - PART1 (13:31 )
+ 
+ [DEMO] Athena Demo - PART2 (11:37 )
+ 
+ Amazon Macie 101 (12:04 )
+ 
+ [DEMO] Amazon Macie (15:35 )
+ 
+ AWS Glue 101 (6:23 )
+ 
+ AWS Artifact (1:47 )
+Domain 5: Data Protection
+ 
+ What is a hardware security Module (HSM) (6:40 )
+ 
+ AWS Key Management Service (KMS) 101 (18:38 )
+ 
+ CloudHSM (14:36 )
+ 
+ [SHAREDALL] S3 Object Encryption CSE/SSE (23:31 )
+ 
+ [SHAREDALL] [DEMO] Object Encryption and Role Separation (14:50 )
+ 
+ Envelope Encryption (8:06 )
+ 
+ Bucket Keys (5:59 )
+ 
+ AWS Managed Keys vs Customer managed Keys (6:45 )
+ 
+ [SHAREDALL] [DEMO] KMS - Encrypting the battleplans with KMS (12:43 )
+ 
+ Importing Key Material vs Generated Key Material (7:37 )
+ 
+ Asymmetric keys in KMS (3:25 )
+ 
+ Digital Signing using KMS (4:16 )
+ 
+ Encryption SDK - Data Key Caching (6:27 )
+ 
+ KMS security Model & Key Policies (5:51 )
+ 
+ KMS Grants (7:16 )
+ 
+ KMS Multi-region keys (5:29 )
+ 
+ CloudHSM vs KMS (3:22 )
+ 
+ KMS Custom Key Stores (4:49 )
+ 
+ AWS Secrets Manager 101 (7:44 )
+ 
+ RDS Encryption & IAM Authentication (7:03 )
+ 
+ DynamoDB Encryption (5:21 )
+ 
+ KMS encryption context (8:13 )
+ 
+Start  [SHAREDALL] Elastic Load Balancer Architecture - PART1 (10:18 )
+ 
+Start  Elastic Load Balancer Architecture (ELB) - PART2 (12:32 )
+ 
+Start  [SHAREDALL] Application Load balancing (ALB) vs Network Load Balancing (NLB) (16:20 )
+ 
+Start  ELB : SSL Offload and Session Stickiness (12:11 )
+ 
+Start  [SHAREDALL] [DEMO] Seeing Session Stickiness in Action (12:57 )
+ 
+Start  Load Balancer Security Policies (3:28 )
+EXAM PREP
+ 
+Start  General AWS Exam Technique - 3 Phase Approach (8:56 )
+ 
+Start  General AWS Question Technique - PART1 (14:12 )
+ 
+Start  General AWS Question Technique - PART2 (9:01 )
+ 
+Start  Exam Question Walkthrough #1 (8:16 )
+ 
+Start  Exam Question Walkthrough #2 (4:53 )
+ 
+Start  Practice Exam #1 - PART1 (1-20)
+ 
+Start  Practice Exam #1 - PART2 (21-40)
+ 
+Start  Practice Exam #1 - PART3 (41-60)
+CONGRATULATIONS - YOU'VE FINISHED
+ 
+Start  Thanks and a Favour (3:15 )
+ 
+Start  COURSE UPGRADES - SAVE $ WHEN ADDING MORE COURSES

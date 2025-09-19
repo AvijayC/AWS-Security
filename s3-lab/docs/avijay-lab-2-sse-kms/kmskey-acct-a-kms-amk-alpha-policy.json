@@ -1,0 +1,63 @@
+{
+  "Id": "key-consolepolicy-3",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Enable IAM User Permissions",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+            "arn:aws:iam::957401190575:root",
+            "arn:aws:iam::957401190575:user/iamadmin",
+            "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AdministratorAccess_d1bcf7d0d45a5f6a"
+        ]
+      },
+      "Action": "kms:*",
+      "Resource": "*"
+    },
+    {
+        "Sid": "Allow Key Usage for SSE-KMS with ABAC",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+        },
+        "Action": [
+            "kms:Decrypt",
+            "kms:Encrypt",
+            "kms:ReEncrypt*",
+            "kms:GenerateDataKey*",
+            "kms:DescribeKey",
+            "kms:CreateGrant",
+            "kms:RetireGrant"
+        ],
+        "Resource": "*",
+        "Condition": {
+            "StringEquals": {
+                "kms:EncryptionContext:username_owner": "${aws:PrincipalTag/username_owner}"
+            }
+        }
+    },
+    {
+        "Sid": "Explicit Deny for SSE-KMS with invalid ABAC",
+        "Effect": "Deny",
+        "Principal": {
+            "AWS": "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+        },
+        "Action": [
+            "kms:Decrypt",
+            "kms:Encrypt",
+            "kms:ReEncrypt*",
+            "kms:GenerateDataKey*",
+            "kms:DescribeKey",
+            "kms:CreateGrant",
+            "kms:RetireGrant"
+        ],
+        "Resource": "*",
+        "Condition": {
+            "StringNotEquals": {
+                "kms:EncryptionContext:username_owner": "${aws:PrincipalTag/username_owner}"
+            }
+        }
+    }
+  ]
+}

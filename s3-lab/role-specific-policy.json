@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowRoleSpecificAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:role/S3TestRole-1755931935"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::avijay-role-specific-bucket-1755931969",
+        "arn:aws:s3:::avijay-role-specific-bucket-1755931969/*"
+      ]
+    }
+  ]
+}

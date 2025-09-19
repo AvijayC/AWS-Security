@@ -1,0 +1,86 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAdminAccess",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::avijay-lab-2-sse-kms",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:user/iamadmin",
+                    "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AdministratorAccess_d1bcf7d0d45a5f6a"
+                ]
+            }
+        },
+        {
+            "Sid": "ABACBucketLevelAccess",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::avijay-lab-2-sse-kms",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+                ]
+            }
+        },
+        {
+            "Sid": "ABACObjectLevelAccess",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::avijay-lab-2-sse-kms/*",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+                ]
+            },
+            "Condition": {
+                "StringEquals": {
+                    "s3:ExistingObjectTag/username_owner": "${aws:PrincipalTag/username_owner}"
+                }
+            }
+        },
+        {
+            "Sid": "ABACDenyObjectLevelAccess",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::avijay-lab-2-sse-kms/*",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+                ]
+            },
+            "Condition": {
+                "StringNotEquals": {
+                    "s3:ExistingObjectTag/username_owner": "${aws:PrincipalTag/username_owner}"
+                }
+            }
+        },
+        {
+            "Sid": "ABACDenyUploadUnlessTaggedAsUser",
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::avijay-lab-2-sse-kms/*",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+                ]
+            },
+            "Condition": {
+                "StringNotEquals": {
+                    "s3:RequestObjectTag/username_owner": "${aws:PrincipalTag/username_owner}"
+                }
+            }
+        }
+
+    ]
+}

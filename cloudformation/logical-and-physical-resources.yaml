@@ -1,0 +1,7 @@
+Resources:
+  Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: ami-0065d1db1e72b2d9b
+      InstanceType: "t3.micro"
+      KeyName: "acct-a-keypair-20250719"

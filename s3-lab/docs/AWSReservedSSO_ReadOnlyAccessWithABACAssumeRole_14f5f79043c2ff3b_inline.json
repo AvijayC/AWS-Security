@@ -1,0 +1,45 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "KMSPermissionsForSSEKMS",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*",
+                "kms:DescribeKey",
+                "kms:CreateGrant",
+                "kms:RetireGrant"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "KMSListKeys",
+            "Effect": "Allow",
+            "Action": [
+                "kms:ListKeys",
+                "kms:ListAliases",
+                "kms:GetKeyRotationStatus",
+                "kms:GetKeyPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "S3PutObjectForKMSLab",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectTagging"
+            ],
+            "Resource": [
+                "arn:aws:s3:::avijay-lab-2-sse-kms/*",
+                "arn:aws:s3:::avijay-lab-3-sse-s3-vpce-a/*",
+                "arn:aws:s3:::avijay-lab-4-sse-kms-vpce-a/*",
+                "arn:aws:s3:::avijay-lab-5-sse-s3-vpce-b/*",
+                "arn:aws:s3:::avijay-lab-6-sse-kms-vpce-b/*"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: <your stack description here>
+# Available top-level fields are listed in code completion
+# Add Resources Here: uncomment the following lines
+# Resources:
+#   <resource name here>:
+#     Type: # resource type here - available resources are listed in code completion
+#     # <add resource-specific properties underneath this entry - available properties are listed in code completion
+#     Properties:
+Parameters:
+  EnvironmentName:
+    Description: "Environment name that's prefixed to resource names"
+    Type: String
+    Default: "dev"
+    MinLength: 2
+    MaxLength: 100
+    AllowedPattern: "^[a-zA-Z][-a-zA-Z0-9]*$"
+    ConstraintDescription: "must start with a letter and contain only letters, numbers, and hyphens"
+
+  VpcCIDR:
+    Description: "CIDR block for the VPC"
+    Type: String
+    Default: "10.0.0.0/16"
+  
+  PublicSubnet1CIDR:
+    Description: "CIDR block for az1_public"
+    Type: String
+    Default: "10.0.10.0/24"
+
+  PublicSubnet2CIDR:
+    Description: "CIDR block for az2_public"
+    Type: String
+    Default: "10.0.11.0/24"
+
+  PrivateSubnet1CIDR:
+    Description: "CIDR block for az1_private"
+    Type: String
+    Default: "10.0.20.0/24"
+
+  PrivateSubnet2CIDR:
+    Description: "CIDR block for az2_private"
+    Type: String
+    Default: "10.0.21.0/24"
+  
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCIDR
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Ref EnvironmentName
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    
+    

@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "TestRoleGenTrust",
+            "Effect": "Allow",
+            "Action": ["sts:AssumeRole", "sts:TagSession"],
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:root",
+                    "arn:aws:iam::455095160360:root"
+                ]
+            }
+        }
+    ]
+}

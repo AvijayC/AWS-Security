@@ -1,0 +1,41 @@
+Description: Formation of a basic nested stack with 3 vpc/ec2 setups
+
+Parameters:
+  EnvironmentNamePrefix:
+    Type: String
+    Description: prefix added to the start of all nested env names
+    Default: devnested
+
+  ParentCIDR:
+    Type: String
+    Description: Parent CIDR which will contain the nested stacks
+    Default: 10.0.0.0/8
+
+Resources:
+  VPCStackA:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.us-east-1.amazonaws.com/cf-templates-ldlw4pl6x1r30-us-east-1/template-1757640518797.yaml
+      Parameters:
+        VpcCIDR: !Select [0, !Cidr [!Ref ParentCIDR, 3, 16]]
+        EnvironmentName: !Sub "${EnvironmentNamePrefix}A"
+        RandomValue1: 'us-east-1'
+
+  VPCStackB:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.us-east-1.amazonaws.com/cf-templates-ldlw4pl6x1r30-us-east-1/template-1757640518797.yaml
+      Parameters:
+        VpcCIDR: !Select [1, !Cidr [!Ref ParentCIDR, 3, 16]]
+        EnvironmentName: !Sub "${EnvironmentNamePrefix}B"
+        RandomValue1: 'us-east-1'
+
+  VPCStackC:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://s3.us-east-1.amazonaws.com/cf-templates-ldlw4pl6x1r30-us-east-1/template-1757640518797.yaml
+      Parameters:
+        VpcCIDR: !Select [2, !Cidr [!Ref ParentCIDR, 3, 16]]
+        EnvironmentName: !Sub "${EnvironmentNamePrefix}C"
+        RandomValue1: 'us-east-1'
+  

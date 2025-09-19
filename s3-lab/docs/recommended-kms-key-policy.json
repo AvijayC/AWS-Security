@@ -1,0 +1,96 @@
+{
+    "Version": "2012-10-17",
+    "Id": "key-policy-for-sse-kms-with-abac",
+    "Statement": [
+        {
+            "Sid": "Enable IAM User Permissions",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:root"
+            },
+            "Action": "kms:*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "Allow Admin Key Management",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::957401190575:user/iamadmin",
+                    "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AdministratorAccess_d1bcf7d0d45a5f6a"
+                ]
+            },
+            "Action": [
+                "kms:Create*",
+                "kms:Describe*",
+                "kms:Enable*",
+                "kms:List*",
+                "kms:Put*",
+                "kms:Update*",
+                "kms:Revoke*",
+                "kms:Disable*",
+                "kms:Get*",
+                "kms:Delete*",
+                "kms:ScheduleKeyDeletion",
+                "kms:CancelKeyDeletion",
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*",
+                "kms:CreateGrant",
+                "kms:RetireGrant"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "Allow ABAC Role to Use Key for S3",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+            },
+            "Action": [
+                "kms:Decrypt",
+                "kms:GenerateDataKey",
+                "kms:GenerateDataKeyWithoutPlaintext",
+                "kms:DescribeKey",
+                "kms:CreateGrant"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "kms:ViaService": "s3.us-east-1.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "Allow ABAC with Encryption Context",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::957401190575:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ReadOnlyAccessWithABACAssumeRole_14f5f79043c2ff3b"
+            },
+            "Action": [
+                "kms:Decrypt",
+                "kms:GenerateDataKey"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "kms:EncryptionContext:username_owner": "${aws:PrincipalTag/username_owner}",
+                    "kms:ViaService": "s3.us-east-1.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "DenyUnencryptedObjectUploads",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "kms:Decrypt",
+            "Resource": "*",
+            "Condition": {
+                "Bool": {
+                    "kms:GrantIsForAWSResource": "false"
+                }
+            }
+        }
+    ]
+}

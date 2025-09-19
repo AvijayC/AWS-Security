@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowUserSpecificAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::957401190575:user/aalsg-iam-user1"
+      },
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::avijay-user-specific-bucket-1755931868",
+        "arn:aws:s3:::avijay-user-specific-bucket-1755931868/*"
+      ]
+    }
+  ]
+}

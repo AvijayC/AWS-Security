@@ -1,0 +1,1 @@
+Example object 1 for s3 manual uploads - example object 1
